@@ -63,28 +63,28 @@ check `[PL Data scraping]` for full code
 
 #### Implementation of Time Limit
 
-- **Delay Interval:** Added a time delay (60 seconds) between consecutive requests.
+**Delay Interval:** Added a time delay (60 seconds) between consecutive requests.
 
 
 
-![time limit](https://github.com/user-attachments/assets/07b2f4d3-f506-4345-9fe9-279efef5493d)
+  ![time limit](https://github.com/user-attachments/assets/07b2f4d3-f506-4345-9fe9-279efef5493d)
 
 
 Beautiful Soup and pandas were used to extract and ro formulate the data into pandas frame. The dataset encompasses various performance metrics and statistics from the previous two EPL seasons.
 
-![image](https://github.com/user-attachments/assets/4d429e31-b12e-453c-aea6-dda3bb6c69d7)
+  ![image](https://github.com/user-attachments/assets/4d429e31-b12e-453c-aea6-dda3bb6c69d7)
 
 
 ## Data Processing
 
 1. **Data Cleaning:** The raw data was cleaned and pre-processed with Pandas to ensure consistency and accuracy for modeling.
     
-![cleaning data](https://github.com/user-attachments/assets/293c131a-d690-43a4-a8c4-0cef20913935)
+    ![cleaning data](https://github.com/user-attachments/assets/293c131a-d690-43a4-a8c4-0cef20913935)
 
 
 2. **Creating predictors:** Predictors were created to train the model
 
-![predictors](https://github.com/user-attachments/assets/3363bab6-e145-4ea9-8dfc-4ac0d3bf0274)
+    ![predictors](https://github.com/user-attachments/assets/3363bab6-e145-4ea9-8dfc-4ac0d3bf0274)
 ## Model Building
 
 The prediction model was developed using Scikit-Learn with the following classifiers:
