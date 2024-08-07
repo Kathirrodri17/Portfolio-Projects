@@ -1,6 +1,6 @@
 # COVID-19 Exploratory Data Analysis Project
 
-## Dashboard
+## Covid 19 Dashboard
 
 Explore the interactive dashboard showcasing the findings of this analysis: [Dashboard Link](https://public.tableau.com/views/Covidproject_17226240422510/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
@@ -81,7 +81,7 @@ We created temporary tables to analyze and store vaccination coverage data.
 - **Comparative Analysis:** Compared the effectiveness of responses across countries and correlated vaccination rates with infection rates.
 
 
-## Conclusion
+## Conclusion 
+This project provides an in-depth exploratory data analysis of COVID-19 using SQL, Excel, and Tableau. The analysis offers valuable insights into global and regional impacts, including infection rates, mortality, and vaccination coverage. Key findings are visualized through an interactive Tableau dashboard, which highlights trends, regional variations, and the progress of vaccination efforts. The dashboard serves as a comprehensive tool for understanding the pandemic's effects and supporting informed public health decisions.
 
-This project illustrates a comprehensive approach to COVID-19 data analysis, utilizing SQL for querying, Excel for data cleaning, and Tableau for visualization. The dashboard provides valuable insights into global COVID-19 trends, geographic impact, and vaccination coverage.
-
+For an interactive exploration of the data, visit the COVID-19 Dashboard.
