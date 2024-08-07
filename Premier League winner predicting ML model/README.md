@@ -35,3 +35,13 @@ After these improvements, the model's accuracy in predicting specific match winn
 
 - **Overall Match Outcome Prediction Accuracy:** 60%
 - **Specific Match Winner Prediction Accuracy:** 60%
+- ## Future Work
+
+- **Explore Additional Machine Learning Algorithms:** Investigate and apply different algorithms to potentially achieve better prediction accuracy.
+- **Integrate More Detailed Player and Team Statistics:** Include more granular data to enhance the model’s ability to predict match outcomes.
+- **Incorporate Real-Time Data Updates:** Implement mechanisms to update the data dynamically for more accurate and up-to-date predictions.
+
+## Acknowledgements
+
+- Special thanks to **FBref** for providing the dataset.
+- Appreciation to the **Scikit-Learn** community for the invaluable machine learning tools.
