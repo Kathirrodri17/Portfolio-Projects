@@ -2,10 +2,10 @@
 
 ## Project Overview
 
-This project aims to predict the winners of English Premier League (EPL) matches for the 2024-25 season. Utilizing historical data from the 2022-2024 seasons, a prediction model was built to forecast match outcomes with a focus on accuracy.
+This Project aims to predict the winners of English Premier League (EPL) matches for the 2024-25 season. Utilizing historical data from the 2022-2024 seasons, a prediction model was built to forecast match outcomes with a focus on accuracy.
 
 ## Data Scrapping
-The project required realtime match data from the English Premier League and so data scraping became an important part of this project   
+The Project required realtime match data from the English Premier League and so data scraping became an important part of this project   
 The data was scraped from FBref using Beautiful Soup and extracted from HTML. The dataset encompasses various performance metrics and statistics from the previous two EPL seasons.
 
 
