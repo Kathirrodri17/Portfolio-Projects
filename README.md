@@ -19,6 +19,7 @@ Each project in this repository includes detailed descriptions, code, and where 
 I use a variety of tools and technologies in my data analysis work, including:
 
 - **Python:** Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, BeautifulSoup
+- **R Programming**: ggplot2, dplyr, caret, ivreg
 - **SQL:** Data extraction and manipulation
 - **Excel:** Advanced formulas, pivot tables, and data visualization
 - **Tableau/Power BI:** Interactive dashboards and data visualizations
