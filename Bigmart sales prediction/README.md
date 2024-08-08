@@ -1,6 +1,8 @@
 # Big Mart Sales Prediction
 
-This project aims to predict the sales of products in different outlets of Big Mart using various features of the products and outlets. The dataset contains information about products and stores, including attributes such as item weight, visibility, type, and outlet size, location, and type.
+This project aims to build a machine learning model to forecast sales for various products across different Big Mart outlets. The retail industry often faces challenges in predicting sales due to the vast array of products and the diverse characteristics of stores. Accurate sales predictions can help businesses manage inventory, optimize supply chain processes, and improve customer satisfaction by ensuring product availability.
+
+This project utilizes a dataset provided by Kaggle, which includes information about products, such as item weight, visibility, type, and maximum retail price (MRP), as well as details about the outlets, like their size, location, and establishment year. The primary goal is to predict the `[Item_Outlet_Sales]`, which is the sales of the products at the respective outlets.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
