@@ -1,35 +1,65 @@
-# COVID-19 Exploratory Data Analysis Project
-Dashboard link: https://public.tableau.com/views/Covidproject_17226240422510/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+# Big Mart Sales Prediction
 
-This project focuses on the exploratory data analysis (EDA) of COVID-19 data using SQL, Excel, and Tableau. The goal was to analyze the massive datasets from all countries, clean and prepare the data for visualization, and create a comprehensive dashboard to summarize the findings.
+This project aims to predict the sales of products in different outlets of Big Mart using various features of the products and outlets. The dataset contains information about products and stores, including attributes such as item weight, visibility, type, and outlet size, location, and type.
+
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Dependencies](#dependencies)
+- [Data Collection and Processing](#data-collection-and-processing)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Data Pre-Processing](#data-pre-processing)
+- [Model Training and Evaluation](#model-training-and-evaluation)
+- [Conclusion](#conclusion)
 
 ## Project Overview
+The goal of this project is to build a machine learning model to predict the sales of products in various Big Mart outlets. The dataset used in this project is provided by kaggle website. The prediction model is built using the XGBoost Regressor algorithm.
 
-### Tools and Technologies Used
-- **SQL**: Microsoft SQL Server for initial data analysis and querying
-- **Excel**: For data cleaning and preparation
-- **Tableau**: For data visualization and dashboard creation
+## Dependencies
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- scikit-learn
+- xgboost
+  
+## Data Collection and Processing
+The dataset is loaded into a Pandas DataFrame, and initial analysis is performed to understand the structure and features of the data.
 
-### Steps Involved
+![Capture](https://github.com/user-attachments/assets/ce8424ef-bc1c-4a43-b10f-fd4e71c57293)
 
-1. **Data Collection and Import**:
-   - Imported a large dataset containing COVID-19 data from multiple countries into Microsoft SQL Server.
-   
-2. **Exploratory Data Analysis (EDA)**:
-   - Performed initial analysis using SQL to understand the dataset's structure and key statistics.
-   - Queried and filtered the data to identify trends, patterns, and anomalies.
+## Exploratory Data Analysis
+We explore the dataset by checking for missing values, understanding the distribution of numerical features, and visualizing categorical features. using pandas and seaborn libraries
+#### Checking missing values
+![cleaning](https://github.com/user-attachments/assets/672b029c-1d13-457e-a316-274dc7043870) 
 
-3. **Data Cleaning**:
-   - Exported the queried data to Excel for further cleaning.
-   - Handled missing values, corrected inconsistencies, and formatted the data for analysis.
+#### Understanding Numerical features
+![num vis](https://github.com/user-attachments/assets/4619febb-0bce-4935-b787-9ce2ef9156c3) 
 
-4. **Data Visualization**:
-   - Imported the cleaned data into Tableau.
-   - Created a dashboard to visualize key insights, including trends over time, geographical distribution, and comparisons between countries.
+#### Understanding Numerical features
+![Cat vis](https://github.com/user-attachments/assets/c2763740-01c6-4a85-aa16-302366bd53ba) 
 
-## Key Insights
-- Summary of the most significant trends and findings from the data analysis.
-- Visual representations of the impact of COVID-19 across different regions.
+## Data Pre-Processing
+Handling missing values and encoding categorical variables are crucial steps before training the model. Missing values in the Item_Weight column are filled with the mean, and those in the Outlet_Size column are filled with the mode. Label encoding is used to convert categorical variables into numerical ones.
+#### mean
+![mean](https://github.com/user-attachments/assets/413ce454-c3fb-4752-91f4-d6f497913d4f) 
+
+#### mode
+![median](https://github.com/user-attachments/assets/4bad7c37-94b6-4ce1-b1a1-3a239c0fc874)
+
+#### Label encoding
+![lable](https://github.com/user-attachments/assets/62d08e93-8aa8-4c14-8b27-2bc8bb47bb4f)
+
+## Model Training and Evaluation
+The dataset is split into training and testing sets. An XGBoost Regressor model is trained on the training data and evaluated on both training and testing data.
+
+#### Training and Testing sets
+![training and testing](https://github.com/user-attachments/assets/c074309e-e148-4a0e-b725-1aa4a7b51ed6)
+
+#### R squared value for training data
+![r squ train](https://github.com/user-attachments/assets/674e5b8f-be67-4137-8953-056447d73770)
+
+#### R squared value for testing data
+![r test](https://github.com/user-attachments/assets/f61c57c0-8ace-4d69-afca-aee415cd149f)
 
 ## Conclusion
-This project demonstrates a comprehensive approach to data analysis, from SQL querying and data cleaning in Excel to advanced visualizations in Tableau. The resulting dashboard provides valuable insights into the global impact of COVID-19.
+The XGBoost Regressor model provides a reasonable prediction of the sales in various outlets. The R-squared value on the training data is approximately 0.64, while on the testing data it is approximately 0.59, indicating a good fit for the model with some room for improvement.
