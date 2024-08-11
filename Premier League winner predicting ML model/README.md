@@ -2,19 +2,19 @@
 
 ## Project Overview
 
-This Project aims to predict the winners of English Premier League (EPL) matches for the 2024-25 season. Utilizing historical data from the 2022-2024 seasons, a prediction model was built to forecast match outcomes with a focus on match winners.
+This project aims to predict the winners of English Premier League (EPL) matches for the 2024-25 season. By leveraging historical data from the 2022-2024 seasons, a prediction model has been developed to forecast match outcomes with a primary focus on determining the match winners. The model utilizes various match-related features such as team performance and statistics, match conditions to provide accurate predictions, helping fans, analysts, and stakeholders make informed decisions about upcoming EPL matches.
 
 ## Data Scrapping
 The Project required realtime match data from the English Premier League and was extracted using HTML from Fbref. Data scraping was one of  important part of this project.
 
-[code]
+#### Extracting HTML links
 
 
 ![Link extraction](https://github.com/user-attachments/assets/dc8f4851-ba79-4c7b-9ed2-e7d00595fe64)
 
 
 
-[website table]
+#### Website Table 
 
 
 
@@ -30,7 +30,7 @@ The data collection process was carried out in two key phases to ensure a compre
 - **Details:** The initial scraping script was designed to gather match data, team statistics, and performance metrics for one team. This step allowed for validation of the data extraction process and ensured accuracy.
 
 
-[scraped mancity/oneteam data]
+#### Scraped Mancity/Oneteam Data
 ![mancity stats](https://github.com/user-attachments/assets/19137988-e219-4b13-86d6-9497a23f1de5)
 
 
@@ -43,7 +43,7 @@ The data collection process was carried out in two key phases to ensure a compre
   - **Data Aggregation:** Combined data from all teams into a single dataset, ensuring consistency and completeness across the two seasons.
  
   
-[code example]
+`[Code example]`
 
 
 ![loop example](https://github.com/user-attachments/assets/8fb2977a-4772-47e8-aeac-e13ccb15b92f)
@@ -117,7 +117,7 @@ To improve the prediction of specific match winners, the following steps were un
 
    ![refinement](https://github.com/user-attachments/assets/4ac7c023-e163-489f-8562-ae400ab0a466)
 
-### After these improvements, the model's accuracy in predicting specific match winners increased to 60%.
+#### After these improvements, the model's accuracy in predicting specific match winners increased to 60%.
 
 ## Results
 
