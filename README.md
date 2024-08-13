@@ -43,5 +43,5 @@ Thank you for visiting my portfolio. I hope you find the projects interesting an
 ---
 
 J.M.Kathir  
-[LinkedIn](https://www.linkedin.com/in/kathir-jm/) | kathirrodriguez@gmail.com(kathirrodriguez@gmail.com) | [Portfolio Website](https://kathirrodri17.github.io/Kathir-J-M.github.io/#contact)
+[LinkedIn](https://www.linkedin.com/in/kathir-jm/) | [kathirrodriguez@gmail.com](kathirrodriguez@gmail.com) | [Portfolio Website](https://kathirrodri17.github.io/Kathir-J-M.github.io/#contact) 
 
