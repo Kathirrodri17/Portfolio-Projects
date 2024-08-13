@@ -1,4 +1,4 @@
-# Welcome to My Data Analysis Portfolio
+# Welcome to My Github Project Portfolio Repository
 
 Hello and welcome to my GitHub portfolio! I’m Kathir, Mater's degree Gradute in Economics and a data analyst with a passion for turning raw data into meaningful insights. This repository showcases a collection of projects that highlight my expertise in data manipulation, statistical analysis, and visualization.
 
@@ -24,8 +24,6 @@ I use a variety of tools and technologies in my data analysis work, including:
 - **Excel:** Advanced formulas, pivot tables, and data visualization
 - **Tableau/Power BI:** Interactive dashboards and data visualizations
 
-##
-
 Feel free to explore the projects listed in this repository. Each project directory contains:
 
 - A brief description of the project and its objectives
@@ -45,5 +43,5 @@ Thank you for visiting my portfolio. I hope you find the projects interesting an
 ---
 
 J.M.Kathir  
-[LinkedIn](https://www.linkedin.com/in/kathir-jm/) |  kathirrodriguez@gmail.com
+[LinkedIn](https://www.linkedin.com/in/kathir-jm/) | kathirrodriguez@gmail.com(kathirrodriguez@gmail.com) | [Portfolio Website](https://kathirrodri17.github.io/Kathir-J-M.github.io/#contact)
 
