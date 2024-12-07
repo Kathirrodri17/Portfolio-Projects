@@ -1,0 +1,116 @@
+import pandas as pd
+from geopy.distance import geodesic
+
+# Function to clean latitude and longitude values
+def clean_coordinates(value):
+    if isinstance(value, str):
+        # Remove any directional letters (e.g., 'N', 'S', 'E', 'W') and spaces
+        value = ''.join([char for char in value if char.isdigit() or char == '.'])
+        try:
+            return float(value)
+        except ValueError:
+            return None  # Return None if conversion fails
+    return value
+
+# Function to validate latitude and longitude values
+def is_valid_coordinates(lat, lon):
+    # Latitude must be in the range [-90, 90], and Longitude in the range [-180, 180]
+    return -90 <= lat <= 90 and -180 <= lon <= 180
+
+# Function to convert DMS to decimal degrees
+def dms_to_decimal(degrees, minutes, seconds):
+    return degrees + (minutes / 60) + (seconds / 3600)
+
+# Central location in DMS format: Latitude: 11° 1'33.86"N, Longitude: 77° 1'11.91"E
+latitude_dms = (11, 1, 33.86)  # (Degrees, Minutes, Seconds)
+longitude_dms = (77, 1, 11.91)
+
+# Convert to decimal degrees
+central_lat = dms_to_decimal(*latitude_dms)
+central_lon = dms_to_decimal(*longitude_dms)
+
+center_point = (central_lat, central_lon)
+
+# Load the dataset containing all Indian pincodes
+try:
+    # Read CSV with error handling for malformed rows
+    pincode_data = pd.read_csv('pincode.csv', low_memory=False, on_bad_lines='skip')
+    print("Data loaded successfully.")
+except pd.errors.ParserError as e:
+    print(f"Error parsing CSV: {e}")
+    exit()
+except Exception as e:
+    print(f"An error occurred: {e}")
+    exit()
+
+# Clean the Latitude and Longitude columns
+pincode_data['Latitude'] = pincode_data['Latitude'].apply(clean_coordinates)
+pincode_data['Longitude'] = pincode_data['Longitude'].apply(clean_coordinates)
+
+# Remove rows with missing or invalid coordinates
+pincode_data = pincode_data.dropna(subset=['Latitude', 'Longitude'])
+pincode_data = pincode_data[pincode_data.apply(lambda row: is_valid_coordinates(row['Latitude'], row['Longitude']), axis=1)]
+
+# Explicitly create a copy to avoid SettingWithCopyWarning
+pincode_data = pincode_data.copy()
+
+# Ensure Latitude and Longitude columns are float type
+pincode_data.loc[:, 'Latitude'] = pincode_data['Latitude'].astype(float)
+pincode_data.loc[:, 'Longitude'] = pincode_data['Longitude'].astype(float)
+
+# Function to calculate distance and filter pincodes within radius
+def get_pincodes_within_radius(center_point, radius=5):  # Radius is now 5 km
+    results = []
+
+    # Loop through the dataset and calculate the distance to each pincode
+    for _, row in pincode_data.iterrows():
+        loc_point = (row['Latitude'], row['Longitude'])
+        distance = geodesic(center_point, loc_point).km  # Calculate the distance in km
+
+        if distance <= radius:  # Strictly include only those within the radius
+            results.append({
+                "CircleName": row['CircleName'],
+                "RegionName": row['RegionName'],
+                "DivisionName": row['DivisionName'],
+                "OfficeName": row['OfficeName'],
+                "Pincode": row['Pincode'],
+                "OfficeType": row['OfficeType'],
+                "Delivery": row['Delivery'],
+                "District": row['District'],
+                "StateName": row['StateName'],
+                "Latitude": row['Latitude'],
+                "Longitude": row['Longitude'],
+                "Distance (km)": distance
+            })
+
+    return results
+
+# Get all pincodes within the 5 km radius
+nearby_pincodes_5km = get_pincodes_within_radius(center_point, radius=5)
+
+# Convert the results to a DataFrame
+df_5km = pd.DataFrame(nearby_pincodes_5km)
+
+# Ensure strict filtering
+df_5km = df_5km[df_5km['Distance (km)'] <= 5]
+
+# Group by Pincode to remove duplicates and merge data
+df_grouped_5km = df_5km.groupby('Pincode').agg({
+    'CircleName': 'first',  # Keep the first occurrence
+    'RegionName': 'first',
+    'DivisionName': 'first',
+    'OfficeName': ', '.join,  # Combine office names as a string
+    'OfficeType': 'first',
+    'Delivery': 'first',
+    'District': 'first',
+    'StateName': 'first',
+    'Latitude': 'mean',  # Average latitude (in case of slight variations)
+    'Longitude': 'mean',  # Average longitude
+    'Distance (km)': 'min'  # Minimum distance
+}).reset_index()
+
+# Save the results to an Excel file
+df_grouped_5km.to_excel("unique_pincodes_within_5km_radius.xlsx", index=False)
+
+# Display the results
+print(df_grouped_5km)
