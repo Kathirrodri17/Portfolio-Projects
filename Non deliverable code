@@ -1,0 +1,25 @@
+import pandas as pd
+
+# Load the CSV file
+file = "/content/Shree medmall Deliverable Pincodes - Sheet1.csv"
+
+# Read the CSV file into a DataFrame
+df = pd.read_csv(file)
+
+# Ensure the required columns ('Pincode' and 'Cp') exist in the DataFrame
+if 'Pincode' not in df.columns or 'Cp' not in df.columns:
+    print("The required columns ('Pincode' and 'Cp') are missing in the file.")
+    exit()
+
+# Find values that exist in both columns (Pincode and Cp)
+pincode_in_both = df['Cp'][df['Cp'].isin(df['Pincode'])]
+
+# Drop the rows where Pincode exists in both columns
+df_unique = df[~df['Cp'].isin(pincode_in_both)]
+
+# Save the result to a new CSV file
+output_file = "/content/unique_pincodes_not_in_both_shree_medmall.csv"
+df_unique.to_csv(output_file, index=False)
+
+# Display the result
+print(f"Unique pincodes that are in Cp but not in Pincode column have been saved to {output_file}")
